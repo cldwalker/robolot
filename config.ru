@@ -1,0 +1,2 @@
+require './robolot'
+run Robolot
