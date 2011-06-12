@@ -9,7 +9,8 @@ class Robolot < Sinatra::Base
   end
 
   get '/sleep/:num' do |num|
-    EM::Synchrony.sleep  num.to_i
-    "Sir, I slept for #{num} seconds. Anything else I can ?zzz..."
+    num = [100, num.to_i].min
+    EM::Synchrony.sleep  num
+    "Sir, I slept for #{num} second(s). Anything else I can zzz..."
   end
 end
